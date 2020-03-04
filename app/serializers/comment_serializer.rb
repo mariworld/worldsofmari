@@ -1,4 +1,5 @@
 class CommentSerializer < ActiveModel::Serializer
-  attributes :id, :message, :user
-  # belongs_to :user
+  attributes :id, :message, :user_id, :video_id
+  belongs_to :user
+  belongs_to :video
 end
