@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
     def index
         comments = Comment.all
-        render json: comments, only: [:id, :user, :message]
+        render json: comments, only: [:id, :user, :message, :created_at]
     end
 
     def create
@@ -27,5 +27,5 @@ class CommentsController < ApplicationController
     def comments_params
         params.require(:comment).permit(:user_id,:message,:video_id)
     end
-    
+
 end
